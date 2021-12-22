@@ -1,3 +1,4 @@
+#Puzzle input
 input_string="""[({(<(())[]>[[{[]{<()<>>
 [(()[<>])]({[<{<<[]>>(
 {([(<{}[<>[]}>{[]{[(<()>
@@ -10,11 +11,7 @@ input_string="""[({(<(())[]>[[{[]{<()<>>
 <{([{{}}[<[[[<>{}]]]>[]]
 }
 <<>)}]
-*
 [(()])"""
-
-#input_string="""123**
-#"""
 
 d_chunk = { "(": -3, "[": -57, "{": -1197, "<": -25137, ")": 3, "]": 57, "}": 1197, ">": 25137 }
 
@@ -29,7 +26,6 @@ def main():
         stack = []
         for key in line:
             val = d_chunk.get(key)
-            if val == None : break
             if val < 0: stack.append(val) 
             if val > 0:
                 if not stack:
